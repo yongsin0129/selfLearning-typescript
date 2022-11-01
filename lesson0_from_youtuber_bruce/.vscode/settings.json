@@ -1,8 +1,0 @@
-{
-  "cSpell.words": [
-    "tsdad"
-  ],
-  "standard.engine": "ts-standard",
-  "standard.enableGlobally": true,
-  "terminal.integrated.automationShell.windows": "C:\\Windows\\System32\\cmd.exe"
-}
