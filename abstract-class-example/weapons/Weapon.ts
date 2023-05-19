@@ -16,7 +16,7 @@ export default abstract class Weapon {
 
   // 武器的攻擊策略，為 Weapon 與 Attack 之間的連結
   // 由於被註記為 abstract，子類別強制要實踐這個成員
-  abstract attackStrategy = new MeleeAttack();
+  abstract attackStrategy : MeleeAttack;
 
   // 類別裡正常的功能實踐，子類別一但繼承就擁有這個功能
   public switchAttackStrategy(type: Attack) {

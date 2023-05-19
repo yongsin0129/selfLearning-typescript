@@ -35,7 +35,7 @@ const underWater2: Fish[] = zoo.filter(isFish) as Fish[]
 // // The predicate may need repeating for more complex examples
 const underWater3: Fish[] = zoo.filter((pet): pet is Fish => {
   if (pet.name === 'sharkey') return false
-  return isFish(pet)
+  return isBird(pet)
 })
 
 console.log('underWater1', underWater1)
@@ -57,26 +57,7 @@ interface Square {
   sideLength: number
 }
 
-type Shape = Circle | Square
-
-function getArea (shape: Shape) {
-  switch (shape.kind) {
-    case 'circle':
-      return Math.PI * shape.radius ** 2
-
-    case 'square':
-      return shape.sideLength ** 2
-  }
-}
-
-// TypeScript will use a never type to represent a state which shouldn’t exist.
-
-interface Triangle {
-  kind: 'triangle'
-  sideLength: number
-}
-
-// type Shape = Circle | Square | Triangle
+// type Shape = Circle | Square
 
 // function getArea (shape: Shape) {
 //   switch (shape.kind) {
@@ -85,9 +66,28 @@ interface Triangle {
 
 //     case 'square':
 //       return shape.sideLength ** 2
-
-//     default:
-//       const _exhaustiveCheck: never = shape // Type 'Triangle' is not assignable to type 'never'.
-//       return _exhaustiveCheck
 //   }
 // }
+
+// TypeScript will use a never type to represent a state which shouldn’t exist.
+
+interface Triangle {
+  kind: 'triangle'
+  sideLength: number
+}
+
+type Shape = Circle | Square | Triangle
+
+function getArea (shape: Shape) {
+  switch (shape.kind) {
+    case 'circle':
+      return Math.PI * shape.radius ** 2
+
+    case 'square':
+      return shape.sideLength ** 2
+
+    default:
+      const _exhaustiveCheck: never = shape // Type 'Triangle' is not assignable to type 'never'.
+      return _exhaustiveCheck
+  }
+}

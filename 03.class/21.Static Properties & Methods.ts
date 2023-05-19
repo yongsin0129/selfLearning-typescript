@@ -26,11 +26,10 @@ class CircleGeometry {
 const myCircle = new CircleGeometry(2)
 
 // 計算圓的面積
-console.log(myCircle.area());
+console.log(myCircle.area())
 
 // 計算圓的周長
-console.log(myCircle.circumference());
-
+console.log(myCircle.circumference())
 
 /********************************************************************************
 *
@@ -79,7 +78,7 @@ class StaticCircleGeometry {
 }
 
 // 接觸 `private` 的靜態成員會被警告！
-StaticCircleGeometry.PI;
+StaticCircleGeometry.PI
 
 // 但是可以藉由公用靜態方法取得資訊
 StaticCircleGeometry.getValueOfPI()
