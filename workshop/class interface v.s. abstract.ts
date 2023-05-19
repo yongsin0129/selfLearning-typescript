@@ -5,6 +5,7 @@
           當我用 class 繼承一個 Abstract Classes 時，
           1.裡面可能已經有初始化的 property and 實作好的 method 可以不需要再定義、實作
           2.可以直接 override property and method
+          注意 override method 時，也需同時滿足父 class 的條件
 
           如果用 class extends 需要滿足 interface 的全部要求
 *
@@ -88,8 +89,8 @@ class Child extends Person {
     console.log('this is sayHi1 function')
   } // 可以覆蓋 父 class 的 method
 
-  sayHi2 () {
-    console.log('this is override sayHi2 function')
+  sayHi2 (x?:number) {
+    console.log(`this is override sayHi2 function , x : ${x}`)
   } // 可以覆蓋 父 class 的 method
 
   sayHi3 () {
@@ -103,6 +104,7 @@ console.log(child.id, child.name)
 child.run()
 child.sayHi1()
 child.sayHi2()
+child.sayHi2(99)
 
 /********************************************************************************
 *
